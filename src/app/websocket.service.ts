@@ -53,6 +53,7 @@ export class WebsocketService {
     this.listeners.forEach((key,index)=>{
       key.call.next(JSON.parse(obj));
     })
+    
   }
 
   private onClose(obj: any){
