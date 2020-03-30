@@ -20,7 +20,7 @@ export class SampleComponent implements OnInit {
     this._httpService.getData(this.url).subscribe(async(res : any)=>{
       await this.initSocket(res.token);
       console.log(res);
-      this._socket.sendMessage(res.token,{});
+      this._socket.sendMessage(res.token,{type : 1});
     });
   }
 
