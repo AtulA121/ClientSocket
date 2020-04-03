@@ -39,12 +39,8 @@ export class WebsocketService {
     console.log("connection opend : ",obj);
   }
 
-  sendMessage(token : any,obj : any){
-    let sockObj={
-      token : token,
-      data : obj
-    };
-    this.socket.emit("message",JSON.stringify(sockObj));
+  sendMessage(obj : any){
+    this.socket.emit("message",JSON.stringify(obj));
   }
 
   private onMessage(obj: string){

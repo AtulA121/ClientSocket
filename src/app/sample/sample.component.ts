@@ -20,12 +20,16 @@ export class SampleComponent implements OnInit {
     this._httpService.getData(this.url).subscribe(async(res : any)=>{
       await this.initSocket(res.token);
       console.log(res);
-      this._socket.sendMessage(res.token,{type : 1});
+      this._socket.sendMessage({type : 1});
     });
   }
 
   async initSocket(token){
     await this._socket.getInstance(token);
+  }
+
+  sendMessage(){
+    this._socket.sendMessage({'a121' : 'a121'});
   }
 
 }
